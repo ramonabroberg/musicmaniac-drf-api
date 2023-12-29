@@ -6,11 +6,12 @@ from datetime import datetime
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    description = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/', default='../default-picture_xzjf4x')
+    name = models.CharField(max_length=255)
     website = models.URLField(blank=True)
-    created_at = models.DateTimeField(default=datetime(2023, 12, 22))
+    description = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering: ['-created_at']
