@@ -7,7 +7,7 @@ from datetime import datetime
 class Profile(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(
-        upload_to='images/', default='../default-picture_xzjf4x')
+        upload_to='profile_images/', default='../default-picture_xzjf4x')
     name = models.CharField(max_length=255)
     website = models.URLField(blank=True)
     description = models.TextField(blank=True)
