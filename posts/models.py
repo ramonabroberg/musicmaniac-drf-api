@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 INSTRUMENT_CHOICES = [
+    ('select_instrument', 'Please select an instrument'),
     ('vocalist_wanted', 'Vocalist wanted'),
     ('vocalist_here', 'Vocalist here'),
     ('guitarist_wanted', 'Guitarist wanted'),
@@ -17,6 +18,7 @@ INSTRUMENT_CHOICES = [
 ]
 
 GENRE_CHOICES = [
+    ('select_genre', 'Please select a genre'),
     ('rock', 'Rock'),
     ('metal', 'Metal'),
     ('pop', 'Pop'),
@@ -33,7 +35,6 @@ class Post(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts'
     )
-    band = models.CharField(blank=True, max_length=100)
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     instrument = models.CharField(choices=INSTRUMENT_CHOICES, max_length=30)

@@ -8,15 +8,15 @@ class PostSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
     def validate_image(self, value):
-        if value.size > 1024 * 1024 * 2:
+        if hasattr(value, 'image') and value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
                 'The image size is larger than 2 MB'
             )
-        if value.image.width > 4000:
+        if hasattr(value, 'image') and value.image.width > 4000:
             raise serializers.ValidationError(
                 'The image width is larger than 4000px'
             )
-        if value.image.height > 4000:
+        if hasattr(value, 'image') and value.image.height > 4000:
             raise serializers.ValidationError(
                 'The image height is larger than 4000px'
             )
@@ -29,6 +29,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = [
-            'id', 'owner', 'band', 'title', 'image', 'instrument', 'genre',
-            'city', 'website', 'description', 'created_at', 'is_owner'
+            'id', 'owner', 'title', 'image', 'instrument', 'genre',
+            'city', 'website', 'description', 'created_at', 'is_owner',
+            'profile_id', 'profile_image'
         ]
