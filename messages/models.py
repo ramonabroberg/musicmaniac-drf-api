@@ -11,3 +11,9 @@ class Message(models.Model):
     )
     content = models.TextField()
     sent_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering: ['sent_at']
+    
+    def __str__(self):
+        return f'{self.sent_at} {self.sender} - {self.receiver}'

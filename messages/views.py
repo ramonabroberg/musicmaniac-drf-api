@@ -9,7 +9,7 @@ class MesssageList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return Message.objects.filter(sender=user).order_by('-sent_at')
+        return Message.objects.filter(sender=user)
     
     def perform_create(self, serializer):
         serializer.save(sender=self.request.user)
@@ -25,4 +25,4 @@ class MessageConversation(generics.ListAPIView):
         return Message.objects.filter(
             (models.Q(sender=user, receiver_id=other_user_id) | models.Q(
                 sender_id=other_user_id, receiver=user))
-        ).order_by('sent_at')
+        )
