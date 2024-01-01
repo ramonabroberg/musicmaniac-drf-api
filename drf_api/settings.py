@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     'profiles',
     'posts',
-    'messages',
+    'messaging',
 ]
 
 MIDDLEWARE = [
