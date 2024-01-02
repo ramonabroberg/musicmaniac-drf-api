@@ -9,7 +9,7 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
         interested_count=Count('interested', distinct=True)
-    )
+    ).order_by('-created_at')
     filter_backends = [
         filters.SearchFilter,
     ]
