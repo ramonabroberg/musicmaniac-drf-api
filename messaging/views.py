@@ -11,7 +11,9 @@ class MessageList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        conversations = Message.objects.filter(Q(sender=user) | Q(receiver=user))
+        conversations = Message.objects.filter(
+            Q(sender=user) | Q(receiver=user)
+        )
 
         distinct_users = set()
         unique_conversations = []
@@ -23,7 +25,10 @@ class MessageList(generics.ListCreateAPIView):
         return unique_conversations
 
     def perform_create(self, serializer):
-        serializer.save(sender=self.request.user, receiver=serializer.validated_data['receiver'])
+        serializer.save(
+            sender=self.request.user,
+            receiver=serializer.validated_data['receiver']
+        )
 
 
 class MessageConversation(generics.ListAPIView):
@@ -34,7 +39,9 @@ class MessageConversation(generics.ListAPIView):
         user = self.request.user
         other_user_id = self.kwargs['user_id']
         return Message.objects.filter(
-            (Q(sender=user, receiver_id=other_user_id) | Q(sender_id=other_user_id, receiver=user))
+            (Q(sender=user,
+            receiver_id=other_user_id) | Q(sender_id=other_user_id,
+            receiver=user))
         )
 
 
