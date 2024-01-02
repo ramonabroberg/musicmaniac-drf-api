@@ -40,7 +40,7 @@ class Post(models.Model):
     instrument = models.CharField(choices=INSTRUMENT_CHOICES, max_length=30)
     genre = models.CharField(choices=GENRE_CHOICES, max_length=30)
     city = models.CharField(blank=True, max_length=100)
-    website = models.CharField(blank=True, max_length=255)
+    website = models.URLField(blank=True, max_length=255)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

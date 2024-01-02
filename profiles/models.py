@@ -9,7 +9,6 @@ class Profile(models.Model):
     image = models.ImageField(
         upload_to='profile_images/', default='../default-picture_xzjf4x')
     name = models.CharField(max_length=255)
-    website = models.URLField(blank=True)
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
