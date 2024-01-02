@@ -7,7 +7,7 @@ class Interested(models.Model):
         User, on_delete=models.CASCADE
     )
     post = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name='interested_users'
+        Post, on_delete=models.CASCADE, related_name='interested'
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
