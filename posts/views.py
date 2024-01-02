@@ -1,5 +1,5 @@
 from django.db.models import Count
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, filters
 from drf_api.permissions import IsOwnerOrReadOnly
 from posts.serializers import PostSerializer
 from posts.models import Post
@@ -10,6 +10,16 @@ class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.annotate(
         interested_count=Count('interested', distinct=True)
     )
+    filter_backends = [
+        filters.SearchFilter,
+    ]
+    search_fields = [
+        'owner__username',
+        'title',
+        'instrument',
+        'genre',
+        'city',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
