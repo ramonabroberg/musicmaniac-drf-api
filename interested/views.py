@@ -3,6 +3,7 @@ from drf_api.permissions import IsOwnerOrReadOnly
 from interested.models import Interested
 from interested.serializers import InterestedSerializer
 
+
 class InterestedList(generics.ListCreateAPIView):
     serializer_class = InterestedSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

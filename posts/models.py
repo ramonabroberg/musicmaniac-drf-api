@@ -31,6 +31,7 @@ GENRE_CHOICES = [
     ('other', 'Other'),
 ]
 
+
 class Post(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts'
@@ -47,6 +48,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-    
+
     def __str__(self):
         return f'{self.id} {self.title}'

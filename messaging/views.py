@@ -21,7 +21,7 @@ class MessageList(generics.ListCreateAPIView):
             if conversation.receiver not in distinct_users:
                 distinct_users.add(conversation.receiver)
                 unique_conversations.append(conversation)
-        
+
         return unique_conversations
 
     def perform_create(self, serializer):
@@ -40,8 +40,8 @@ class MessageConversation(generics.ListAPIView):
         other_user_id = self.kwargs['user_id']
         return Message.objects.filter(
             (Q(sender=user,
-            receiver_id=other_user_id) | Q(sender_id=other_user_id,
-            receiver=user))
+               receiver_id=other_user_id) | Q(sender_id=other_user_id,
+                                              receiver=user))
         )
 
 

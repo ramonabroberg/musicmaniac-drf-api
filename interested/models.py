@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from posts.models import Post
 
+
 class Interested(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
@@ -14,6 +15,6 @@ class Interested(models.Model):
     class Meta:
         ordering = ['-created_at']
         unique_together = ['owner', 'post']
-    
+
     def __str__(self):
         return f'{self.owner} - {self.post}'

@@ -63,7 +63,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
-'8000-ramonabroberg-musicmania-bc2eqmutr8.us2.codeanyapp.com']
+                 '8000-ramonabroberg-musicmania-bc2eqmutr8.us2.codeanyapp.com']
 
 
 # Application definition
