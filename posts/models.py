@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 INSTRUMENT_CHOICES = [
-    ('select_instrument', 'Please select an instrument'),
     ('vocalist_wanted', 'Vocalist wanted'),
     ('vocalist_here', 'Vocalist here'),
     ('guitarist_wanted', 'Guitarist wanted'),
@@ -18,7 +17,6 @@ INSTRUMENT_CHOICES = [
 ]
 
 GENRE_CHOICES = [
-    ('select_genre', 'Please select a genre'),
     ('rock', 'Rock'),
     ('metal', 'Metal'),
     ('pop', 'Pop'),
