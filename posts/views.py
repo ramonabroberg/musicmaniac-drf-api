@@ -35,7 +35,7 @@ class PostInformation(generics.RetrieveUpdateDestroyAPIView):
     )
 
 
-class InstrumentChoices(generics.ListAPIView):
+class InstrumentChoice(generics.ListAPIView):
     serializer_class = InstrumentSerializer
 
     def get_queryset(self):
@@ -44,7 +44,7 @@ class InstrumentChoices(generics.ListAPIView):
         )
 
 
-class GenreChoices(generics.ListAPIView):
+class GenreChoice(generics.ListAPIView):
     serializer_class = GenreSerializer
 
     def get_queryset(self):
