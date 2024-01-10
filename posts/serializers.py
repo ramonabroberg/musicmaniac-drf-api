@@ -46,3 +46,13 @@ class PostSerializer(serializers.ModelSerializer):
             'city', 'website', 'description', 'created_at', 'is_owner',
             'profile_id', 'profile_image', 'interested_id', 'interested_count'
         ]
+
+
+class InstrumentSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
+
+
+class GenreSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
