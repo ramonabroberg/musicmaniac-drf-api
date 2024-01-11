@@ -3,29 +3,33 @@ from django.contrib.auth.models import User
 from datetime import datetime
 
 INSTRUMENT_CHOICES = [
+    ('select_instrument', 'Select instrument...'),
+    ('bassist_here', 'Bassist here'),
+    ('bassist_wanted', 'Bassist wanted'),
+    ('drummer_here', 'Drummer here'),
+    ('drummer_wanted', 'Drummer wanted'),
+    ('guitarist_here', 'Guitarist here'),
+    ('guitarist_wanted', 'Guitarist wanted'),
+    ('keyboardist_here', 'Keyboardist/pianist here'),
+    ('keyboardist_wanted', 'Keyboardist/pianist wanted'),
     ('vocalist_wanted', 'Vocalist wanted'),
     ('vocalist_here', 'Vocalist here'),
-    ('guitarist_wanted', 'Guitarist wanted'),
-    ('guitarist_here', 'Guitarist here'),
-    ('bassist_wanted', 'Bassist wanted'),
-    ('bassist_here', 'Bassist here'),
-    ('keyboardist_wanted', 'Keyboardist wanted'),
-    ('keyboardist_here', 'Keyboardist here'),
-    ('drummer_wanted', 'Drummer wanted'),
-    ('drummer_here', 'Drummer here'),
     ('other', 'Other'),
 ]
 
 GENRE_CHOICES = [
-    ('rock', 'Rock'),
+    ('select_genre', 'Select genre...'),
+    ('blues', 'Blues'),
+    ('classical', 'Classical'),
+    ('country', 'Country'),
+    ('electronic_dance_music', 'Electronic Dance Music'),
+    ('folk', 'Folk'),
+    ('jazz', 'Jazz'),
     ('metal', 'Metal'),
     ('pop', 'Pop'),
-    ('country', 'Country'),
-    ('jazz', 'Jazz'),
-    ('folk', 'Folk'),
-    ('electronic_dance_music', 'Electronic Dance Music'),
     ('r&b', 'R&B'),
-    ('classical', 'Classical'),
+    ('rock', 'Rock'),
+    ('soul', 'Soul'),
     ('other', 'Other'),
 ]
 
