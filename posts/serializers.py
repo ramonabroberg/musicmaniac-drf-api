@@ -10,6 +10,7 @@ class PostSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     interested_id = serializers.SerializerMethodField()
     interested_count = serializers.ReadOnlyField()
+    comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if hasattr(value, 'image') and value.size > 1024 * 1024 * 2:
@@ -44,7 +45,8 @@ class PostSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'title', 'image', 'instrument', 'genre',
             'city', 'website', 'description', 'created_at', 'is_owner',
-            'profile_id', 'profile_image', 'interested_id', 'interested_count'
+            'profile_id', 'profile_image', 'interested_id', 'interested_count',
+            'comments_count'
         ]
 
 
