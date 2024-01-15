@@ -28,7 +28,6 @@ urlpatterns = [
     ),
     path('', include('profiles.urls')),
     path('', include('posts.urls')),
-    path('', include('messaging.urls')),
     path('', include('interested.urls')),
     path('', include('comments.urls')),
 ]
