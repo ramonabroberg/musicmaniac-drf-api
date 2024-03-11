@@ -62,11 +62,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
-                 'musicmaniac-drf-api-961711dd9bd4.herokuapp.com',
+ALLOWED_HOSTS = ['musicmaniac-drf-api-961711dd9bd4.herokuapp.com',
                  '8000-ramonabroberg-musicmania-crjonck118.us1.codeanyapp.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*', 'https://8000-ramonabroberg-musicmania-crjonck118.us1.codeanyapp.com']
 
 # Application definition
 
