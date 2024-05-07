@@ -64,7 +64,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
-   'https://8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
+   '8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
