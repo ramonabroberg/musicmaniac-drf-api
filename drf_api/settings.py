@@ -64,13 +64,13 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
-   '8000-ramonabroberg-musicmania-crjonck118.us1.codeanyapp.com',
+   'https://8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://*',
     'https://*',
-    'https://8000-ramonabroberg-musicmania-crjonck118.us1.codeanyapp.com'
+    'https://8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com'
 ]
 
 # Application definition
