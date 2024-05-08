@@ -1,3 +1,4 @@
+from django.utils import timezone
 from rest_framework import serializers
 from .models import Comment
 
@@ -12,12 +13,15 @@ class CommentSerializer(serializers.ModelSerializer):
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
+    
+    def get_created_at(self, obj):
+        return timezone.localtime(obj.created_at).strftime('%Y-%m-%d %H:%M')
 
     class Meta:
         model = Comment
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-            'post', 'created_at', 'updated_at', 'content'
+            'post', 'created_at', 'content'
         ]
 
 
