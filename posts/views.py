@@ -18,10 +18,10 @@ class PostList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-    filterset_fields = [
+    filterset_fields = {
         'instrument': ['exact'],
         'genre': ['exact'],
-    ]
+    }
     search_fields = [
         'owner__username',
         'title',
@@ -29,6 +29,21 @@ class PostList(generics.ListCreateAPIView):
         'genre',
         'city',
     ]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        instrument = self.request.query_params.get('instrument')
+        genre = self.request.query_params.get('genre')
+
+        if instrument and not genre:
+            queryset = queryset.filter(instrument=instrument)
+        elif genre and not instrument:
+            queryset = queryset.filter(genre=genre)
+        elif instrument and genre:
+            queryset = queryset.filter(instrument=instrument, genre=genre)
+        
+        return queryset
+
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
