@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_api.permissions import IsOwnerOrReadOnly
 from posts.serializers import PostSerializer
 from posts.serializers import InstrumentSerializer, GenreSerializer
@@ -15,6 +16,11 @@ class PostList(generics.ListCreateAPIView):
     ).order_by('-created_at')
     filter_backends = [
         filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        'instrument': ['exact'],
+        'genre': ['exact'],
     ]
     search_fields = [
         'owner__username',
