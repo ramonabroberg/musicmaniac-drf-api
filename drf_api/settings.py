@@ -63,7 +63,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-   os.environ.get('ALLOWED_HOST'),
+   'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com/',
    '8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
 ]
 
