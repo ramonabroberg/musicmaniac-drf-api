@@ -24,8 +24,22 @@ MusicManiac is a website made for musicians that easily wants to get in touch wi
 
 ### General
 
-- The website is tested and works as planned.
--It's possible to create, edit and delete as admin.
+- It's possible to log in and out.
+- As a logged out user you can:
+    - View posts.
+    - View profiles.
+    - See how many likes and comments a post has.
+    - Read comments.
+- As a logged in user you can also:
+    - Upload posts.
+    - Edit posts.
+    - Delete posts.
+    - Like posts.
+    - Comment on posts.
+    - See the posts you've liked on a separate page.
+- It's possible to create, edit and delete as admin.
+- You can not like your own posts as planned.
+- You can search on posts by specific values from the posts.
 
 # Deployment
 
@@ -46,3 +60,15 @@ The site was deployed using the following steps:
 # Credits
 
 - I have had Code Institute's walkthrough project as inspiration and as a base.
+- I have used:
+    - Django
+    - Djangorestframework
+    - Cloudinary
+    - Pillow
+
+- This website is powered by Django, a high-level Python web framework.
+- Images on this website are hosted and managed by Cloudinary.
+- Rest Framework
+- Axios
+- GitHub
+- Heroku
