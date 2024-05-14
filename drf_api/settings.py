@@ -35,7 +35,7 @@ REST_FRAMEWORK = {
     )],
     'DEFAULT_PAGINATION_CLASS':
         'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 14,
+    'PAGE_SIZE': 15,
     'DATETIME_FORMAT': '%d %B %Y %H:%M',
 }
 if 'DEV' not in os.environ:
@@ -65,7 +65,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
    '8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
-   'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com/',
+   'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
