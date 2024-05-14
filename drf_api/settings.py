@@ -65,6 +65,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
    '8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
+   'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com/',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
