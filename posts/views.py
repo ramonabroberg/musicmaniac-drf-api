@@ -2,6 +2,7 @@ from django.db.models import Count
 from rest_framework import generics, permissions, filters
 from drf_api.permissions import IsOwnerOrReadOnly
 from posts.serializers import PostSerializer
+from posts.serializers import InstrumentSerializer, GenreSerializer
 from posts.models import Post, INSTRUMENT_CHOICES, GENRE_CHOICES
 
 
@@ -35,3 +36,19 @@ class PostInformation(generics.RetrieveUpdateDestroyAPIView):
         interested_count=Count('interested', distinct=True),
         comments_count=Count('comment', distinct=True)
     )
+
+class InstrumentChoice(generics.ListAPIView):
+    serializer_class = InstrumentSerializer
+
+    def get_queryset(self):
+        return (
+            [{"id": value[0], "name": value[1]} for value in INSTRUMENT_CHOICES]
+        )
+
+class GenreChoice(generics.ListAPIView):
+    serializer_class = GenreSerializer
+
+    def get_queryset(self):
+        return (
+            [{"id": value[0], "name": value[1]} for value in GENRE_CHOICES]
+        )

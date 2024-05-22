@@ -57,13 +57,13 @@ REST_AUTH_SERIALIZERS = {
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-   'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com/',
+   os.environ.get('ALLOWED_HOST'),
    '8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
 ]
 
