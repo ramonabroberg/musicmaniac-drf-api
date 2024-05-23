@@ -40,7 +40,6 @@ MusicManiac is a website made for musicians that easily wants to get in touch wi
     - Delete posts.
     - Like posts.
     - Comment on posts.
-    - Edit profile.
 - It's possible to create, edit and delete as admin.
 - It's not possible for users to like their own posts.
 - Users can search on posts by title, username, intrument, genre and description.

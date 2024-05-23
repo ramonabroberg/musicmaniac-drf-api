@@ -14,8 +14,7 @@ class ProfileList(generics.ListAPIView):
 
 class ProfileInformation(generics.RetrieveUpdateAPIView):
     """
-    See more information of the profiles and logged in users
-    can also update their profile.
+    See more information of the profiles.
     """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
