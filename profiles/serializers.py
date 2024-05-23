@@ -3,6 +3,9 @@ from profiles.models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    """
+    Serializer for profile model.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     posts_count = serializers.ReadOnlyField()

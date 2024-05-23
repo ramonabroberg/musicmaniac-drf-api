@@ -4,6 +4,11 @@ from posts.models import Post
 
 
 class Interested(models.Model):
+    """
+    Interested model, related to user and post.
+    It's not possible for a user to like a post more than once
+    because of unique_together.
+    """
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE
     )

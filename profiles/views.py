@@ -5,11 +5,18 @@ from profiles.models import Profile
 
 
 class ProfileList(generics.ListAPIView):
+    """
+    See profiles.
+    """
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all().order_by('-created_at')
 
 
 class ProfileInformation(generics.RetrieveUpdateAPIView):
+    """
+    See more information of the profiles and logged in users
+    can also update their profile.
+    """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.all().order_by('-created_at')

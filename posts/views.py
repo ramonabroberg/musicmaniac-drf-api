@@ -7,6 +7,10 @@ from posts.models import Post, INSTRUMENT_CHOICES, GENRE_CHOICES
 
 
 class PostList(generics.ListCreateAPIView):
+    """
+    See posts or upload posts while logged in.
+    Search fields to filter the posts by different values.
+    """
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
@@ -30,6 +34,9 @@ class PostList(generics.ListCreateAPIView):
 
 
 class PostInformation(generics.RetrieveUpdateDestroyAPIView):
+    """
+    See posts and if the user owns it, they can edit/delete it.
+    """
     serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.annotate(
@@ -39,6 +46,9 @@ class PostInformation(generics.RetrieveUpdateDestroyAPIView):
 
 
 class Instruments(generics.ListAPIView):
+    """
+    See intruments available.
+    """
     serializer_class = InstrumentSerializer
 
     def get_queryset(self):
@@ -48,6 +58,9 @@ class Instruments(generics.ListAPIView):
 
 
 class Genres(generics.ListAPIView):
+    """
+    See genres available.
+    """
     serializer_class = GenreSerializer
 
     def get_queryset(self):

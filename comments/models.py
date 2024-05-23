@@ -4,6 +4,9 @@ from posts.models import Post
 
 
 class Comment(models.Model):
+    """
+    Comment model that's related to user and post.
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comment'

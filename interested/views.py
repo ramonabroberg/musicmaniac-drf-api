@@ -5,6 +5,10 @@ from interested.serializers import InterestedSerializer
 
 
 class InterestedList(generics.ListCreateAPIView):
+    """
+    Shows interests and is possible to show your interest of a post
+    by clicking on the star icon while logged in.
+    """
     serializer_class = InterestedSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Interested.objects.all()
@@ -14,6 +18,10 @@ class InterestedList(generics.ListCreateAPIView):
 
 
 class InterestedInformation(generics.RetrieveDestroyAPIView):
+    """
+    Show interest on a post or take it back,
+    all while logged in.
+    """
     serializer_class = InterestedSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Interested.objects.all()

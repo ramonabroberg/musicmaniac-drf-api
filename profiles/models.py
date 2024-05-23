@@ -5,6 +5,9 @@ from datetime import datetime
 
 
 class Profile(models.Model):
+    """
+    Profile model related to user.
+    """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(
         upload_to='profile_images/', default='../default-picture_xzjf4x')

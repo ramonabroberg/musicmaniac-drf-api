@@ -35,6 +35,9 @@ GENRE_CHOICES = [
 
 
 class Post(models.Model):
+    """
+    Post model, related to user (owner).
+    """
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts'
     )

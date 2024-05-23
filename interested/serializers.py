@@ -4,6 +4,9 @@ from interested.models import Interested
 
 
 class InterestedSerializer(serializers.ModelSerializer):
+    """
+    Serializer for interested model.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
