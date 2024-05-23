@@ -37,7 +37,8 @@ class PostInformation(generics.RetrieveUpdateDestroyAPIView):
         comments_count=Count('comment', distinct=True)
     )
 
-class InstrumentChoice(generics.ListAPIView):
+
+class Instruments(generics.ListAPIView):
     serializer_class = InstrumentSerializer
 
     def get_queryset(self):
@@ -45,7 +46,8 @@ class InstrumentChoice(generics.ListAPIView):
             [{"id": value[0], "name": value[1]} for value in INSTRUMENT_CHOICES]
         )
 
-class GenreChoice(generics.ListAPIView):
+
+class Genres(generics.ListAPIView):
     serializer_class = GenreSerializer
 
     def get_queryset(self):
