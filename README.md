@@ -18,13 +18,17 @@ MusicManiac is a website made for musicians that easily wants to get in touch wi
 
 ## Left to implement:
 
-- Message: sender, receiver, content, sent_at.
+- Message
+    - Sender, receiver, content, sent_at.
 
 # Testing
 
 ### General
 
-- It's possible to log in and out.
+- The user has to enter correct username and password to be able to log in.
+- The user get information about what it has to change to be able to log in if it's not correct.
+- Both username and password are mandatory.
+- The user can log out without problem.
 - As a logged out user you can:
     - View posts.
     - View profiles.
@@ -36,10 +40,10 @@ MusicManiac is a website made for musicians that easily wants to get in touch wi
     - Delete posts.
     - Like posts.
     - Comment on posts.
-    - See the posts you've liked on a separate page.
+    - Edit profile.
 - It's possible to create, edit and delete as admin.
-- You can not like your own posts as planned.
-- You can search on posts by specific values from the posts.
+- It's not possible for users to like their own posts.
+- Users can search on posts by title, username, intrument, genre and description.
 
 # Deployment
 
