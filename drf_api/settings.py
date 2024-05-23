@@ -68,11 +68,10 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://*',
-    'https://*',
     'https://8000-ramonabroberg-musicmania-1e2i39gmz8.us1.codeanyapp.com',
     'https://musicmaniac-157565ad27af.herokuapp.com',
     'https://3000-ramonabroberg-musicmania-nbztfw7rxh.us1.codeanyapp.com',
+    'https://musicmaniac-drf-api-961711dd9bd4.herokuapp.com/',
 ]
 
 # Application definition
@@ -117,12 +116,12 @@ MIDDLEWARE = [
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN')]
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(
-        r'^([^.]+)', os.environ.get(
-            'CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    extracted_url = re.match(r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
 
     CORS_ALLOWED_ORIGIN_REGEXES = [
         rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
